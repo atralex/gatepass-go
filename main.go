@@ -64,7 +64,8 @@ func main() {
 
 			if err := ctx.ShouldBindJSON(&reqBody); err != nil {
 				ctx.JSON(http.StatusBadRequest, gin.H{
-					"error": err.Error(),
+					"error":         err.Error(),
+					"authenticated": false,
 				})
 				return
 			}
@@ -74,14 +75,17 @@ func main() {
 
 			if codetophone.VerifyCodeToPhone(phone, code) {
 				ctx.JSON(http.StatusOK, gin.H{
-					"message": "Correct Verification Code",
-					"phone":   phone,
+					"message":       "Correct Verification Code",
+					"phone":         phone,
+					"authenticated": true,
 				})
 				codetophone.DeleteCodeToPhone(phone)
 			} else {
 				ctx.JSON(http.StatusBadRequest, gin.H{
-					"message": "Verification Code Not Matching",
+					"message":       "Verification Code Not Matching",
+					"authenticated": false,
 				})
+				codetophone.DeleteCodeToPhone(phone)
 			}
 		})
 	}
