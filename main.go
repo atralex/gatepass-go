@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"net/http"
 
+	"gatepass/src/codegenerator"
 	"gatepass/src/codetophone"
 	"gatepass/src/config"
-	"gatepass/src/oauthemail"
 	"gatepass/src/phonesender"
 	"gatepass/src/typesgatepass"
 
@@ -33,7 +33,7 @@ func main() {
 				return
 			}
 
-			code, err := oauthemail.GenerateCode()
+			code, err := codegenerator.GenerateCode()
 
 			if err != nil {
 				ctx.JSON(500, gin.H{
