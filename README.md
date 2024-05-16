@@ -62,7 +62,7 @@ In order to execute the module using Docker we must follo the following commands
 git clone https://github.com/usuario/gatepass.git
 cd gatepass
 docker build -t gatepass . 
-docker run -p 8080:8080 -e TWILIO_ACCOUNT_SID='sid de twilio' -e TWILIO_AUTH_TOKEN='auth token twilio' -e TWILIO_FROM_PHONE='Telefono de twilio desde el que se mandaran los mensajes' gatepass
+docker run -p 8080:8080 -e TWILIO_ACCOUNT_SID='twilio account sid' -e TWILIO_AUTH_TOKEN='auth token twilio' -e TWILIO_FROM_PHONE='Phone number from which the messages will be sent' -e APP_NAME='App name' -e LANGUAGE='Language in which the message will be sent' gatepass
 ```
 
 #### Execute with Docker Compose
@@ -79,6 +79,7 @@ In order to initiate the docker from DockerHub you can pull the image with the c
 
 ```bash
 docker pull atralex/gatepass:v1.0.0
+docker run -p 8080:8080 -e TWILIO_ACCOUNT_SID='twilio account sid' -e TWILIO_AUTH_TOKEN='auth token twilio' -e TWILIO_FROM_PHONE='Phone number from which the messages will be sent' -e APP_NAME='App name' -e LANGUAGE='Language in which the message will be sent' gatepass
 ```
 
 Or you can copy the service gatepass from the docker-compose.online.yml file into your docker-compose.yml file, adjust the environment and run:
@@ -151,7 +152,7 @@ Para ejecutar el módulo con Docker ejecutamos los siguientes comandos sustituye
 git clone https://github.com/usuario/gatepass.git
 cd gatepass
 docker build -t gatepass .
-docker run -p 8080:8080 -e TWILIO_ACCOUNT_SID='sid de twilio' -e TWILIO_AUTH_TOKEN='auth token twilio' -e TWILIO_FROM_PHONE='Telefono de twilio desde el que se mandaran los mensajes' gatepass
+docker run -p 8080:8080 -e TWILIO_ACCOUNT_SID='sid de twilio' -e TWILIO_AUTH_TOKEN='auth token twilio' -e TWILIO_FROM_PHONE='Telefono de twilio desde el que se mandaran los mensajes' -e APP_NAME='Nombre de la app' -e LANGUAGE='Idioma en el que se manda el mensaje' gatepass
 ```
 
 #### Ejecución con Docker Compose
@@ -168,6 +169,7 @@ Para iniciar el contenedor desde DockerHub puedes descargar la imagen con el com
 
 ```bash
 docker pull atralex/gatepass:v1.0.0
+docker run -p 8080:8080 -e TWILIO_ACCOUNT_SID='sid de twilio' -e TWILIO_AUTH_TOKEN='auth token twilio' -e TWILIO_FROM_PHONE='Telefono de twilio desde el que se mandaran los mensajes' -e APP_NAME='Nombre de la app' -e LANGUAGE='Idioma en el que se manda el mensaje' atralex/gatepass:v1.0.0
 ```
 
 O puedes copiar el servicio gatepass del archivo docker-compose.online.yml en tu archivo docker-compose.yml, ajustar las variables de entorno y ejecutar:
