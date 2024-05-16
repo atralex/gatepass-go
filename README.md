@@ -1,6 +1,6 @@
 ﻿# GatePass 🚪🔑
 
-# **TODO**
+# **#TODO**
 Add App name to .env and use it to send a clear text in the 2FA message in each application it is used.
 
 # *English*
