@@ -1,5 +1,5 @@
 # Etapa de construcción
-FROM golang:1.18-alpine as builder
+FROM golang:1.21-alpine as builder
 
 # Definir argumentos que puedan ser configurados con --build-arg
 ARG TWILIO_ACCOUNT_SID
