@@ -67,11 +67,26 @@ docker run -p 8080:8080 -e TWILIO_ACCOUNT_SID='sid de twilio' -e TWILIO_AUTH_TOK
 
 #### Execute with Docker Compose
 
-Para ejecutar el módulo con Docker Compose ejecutamos el comando:
+In order to initiate the docker with Docker Compose you need to run the following command:
 
 ```bash
 docker compose up -d --build
 ```
+
+#### Execute from DockerHub
+
+In order to initiate the docker from DockerHub you can pull the image with the command:
+
+```bash
+docker pull atralex/gatepass:v1.0.0
+```
+
+Or you can copy the service gatepass from the docker-compose.online.yml file into your docker-compose.yml file, adjust the environment and run:
+
+```bash
+docker compose up -d --build
+```
+
 
 ## Feedback and Contributions 🚀
 If you find any error or improvement in the code or in the Readme.md feel free to open a pull request.
@@ -146,6 +161,22 @@ Para ejecutar el módulo con Docker Compose ejecutamos el comando:
 ```bash
 docker compose up -d --build
 ```
+
+#### Execute from DockerHub
+
+Para iniciar el contenedor desde DockerHub puedes descargar la imagen con el comando:
+
+```bash
+docker pull atralex/gatepass:v1.0.0
+```
+
+O puedes copiar el servicio gatepass del archivo docker-compose.online.yml en tu archivo docker-compose.yml, ajustar las variables de entorno y ejecutar:
+
+```bash
+docker compose up -d --build
+```
+
+
 ## Feedback y Contribuciones 🚀
 Si encuentras algún error en el código o en el Readme.md por favor abre una pull request para corregirlo.
 También si sabes traducir el mensaje de texto a otro idioma sientete libre de añadir otro case al switch

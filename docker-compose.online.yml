@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  gatepass:
+    image: atralex/gatepass:v1.0.0
+    ports:
+      - "8080:8080"
+    environment:
+      - TWILIO_AUTH_TOKEN=$TWILIO_AUTH_TOKEN
+      - TWILIO_ACCOUNT_SID=$TWILIO_ACCOUNT_SID
+      - TWILIO_FROM_PHONE=$TWILIO_FROM_PHONE
+      - ENV APP_NAME=$APP_NAME
+      - ENV LANGUAGE=$LANGUAGE
+    restart: unless-stopped
