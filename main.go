@@ -1,7 +1,7 @@
 package main
 
 import (
-	"log"
+	"fmt"
 	"net/http"
 
 	"gatepass/src/codetophone"
@@ -18,7 +18,7 @@ func main() {
 	err := godotenv.Load()
 	config.InitVariables()
 	if err != nil {
-		log.Fatal(err)
+		fmt.Print(err.Error())
 	}
 	r := gin.Default()
 	auth := r.Group("/auth")
