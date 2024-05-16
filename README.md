@@ -1,7 +1,7 @@
 ﻿# GatePass 🚪🔑
 
 # **#TODO**
-Add App name to .env and use it to send a clear text in the 2FA message in each application it is used.
+
 
 # *English*
 ## Description
@@ -11,6 +11,7 @@ GatePass is a phone number-based authentication system developed in Go. It uses 
 - Automatic sending of verification codes to phone numbers. 📱
 - Code verification to authenticate users. 🔒
 - RESTful interface for easy integration with other applications. ⚙️
+- Support for English and Spanish. 🌐
 
 ## Technologies Used
 - Go
@@ -74,6 +75,7 @@ docker compose up -d --build
 
 ## Feedback and Contributions 🚀
 If you find any error or improvement in the code or in the Readme.md feel free to open a pull request.
+Also if you know how to transalate the text message into other languages please feel free to add another case in the switch
 
 # *Español*
 
@@ -84,6 +86,7 @@ GatePass es un sistema de autenticación basado en números de teléfono desarro
 - Envío automático de códigos de verificación a números de teléfono. 📱
 - Verificación de códigos para autenticar usuarios. 🔒
 - Interfaz RESTful para integración fácil con otras aplicaciones. ⚙️
+- Soporte para inglés y español. 🌐
 
 ## Tecnologías Usadas
 - Go
@@ -145,3 +148,4 @@ docker compose up -d --build
 ```
 ## Feedback y Contribuciones 🚀
 Si encuentras algún error en el código o en el Readme.md por favor abre una pull request para corregirlo.
+También si sabes traducir el mensaje de texto a otro idioma sientete libre de añadir otro case al switch
