@@ -1,7 +1,7 @@
 ﻿# GatePass 🚪🔑
 
 # **#TODO**
-
+Generate an API and GraphQL specification
 
 # *English*
 ## Description
