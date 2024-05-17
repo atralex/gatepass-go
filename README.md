@@ -11,6 +11,7 @@ GatePass is a phone number-based authentication system developed in Go. It uses 
 - Automatic sending of verification codes to phone numbers. 📱
 - Code verification to authenticate users. 🔒
 - RESTful interface for easy integration with other applications. ⚙️
+- Support for GraphQL. <img src="https://graphql.org/img/logo.svg" alt="GraphQL Logo" width="15" height="14"/>
 - Support for English and Spanish. 🌐
 
 ## Technologies Used
@@ -102,6 +103,7 @@ GatePass es un sistema de autenticación basado en números de teléfono desarro
 - Envío automático de códigos de verificación a números de teléfono. 📱
 - Verificación de códigos para autenticar usuarios. 🔒
 - Interfaz RESTful para integración fácil con otras aplicaciones. ⚙️
+- Soporte para GraphQl. <img src="https://graphql.org/img/logo.svg" alt="GraphQL Logo" width="15" height="14"/>
 - Soporte para inglés y español. 🌐
 
 ## Tecnologías Usadas
