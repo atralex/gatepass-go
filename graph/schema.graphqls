@@ -1,0 +1,24 @@
+type ResponseGetCode {
+  message: String!
+}
+
+type ResponseVerifyCode {
+  authenticated: Boolean!
+  message: String
+  error: String
+  phone: String
+}
+
+input Phone {
+  phone: String!
+}
+
+input Verification {
+  phone: String!
+  code: String!
+}
+
+type Mutation {
+  getCodeFromPhone(input: Phone!): ResponseGetCode!
+  verifyCode(input: Verification!): ResponseVerifyCode!
+}

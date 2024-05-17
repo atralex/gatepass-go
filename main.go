@@ -4,12 +4,16 @@ import (
 	"fmt"
 	"net/http"
 
+	"gatepass/graph"
+	"gatepass/graph/generated"
 	"gatepass/src/codegenerator"
 	"gatepass/src/codetophone"
 	"gatepass/src/config"
 	"gatepass/src/phonesender"
 	"gatepass/src/typesgatepass"
 
+	"github.com/99designs/gqlgen/graphql/handler"
+	"github.com/99designs/gqlgen/graphql/playground"
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
 )
@@ -17,12 +21,20 @@ import (
 func main() {
 	err := godotenv.Load()
 	config.InitVariables()
+	srv := handler.NewDefaultServer(generated.NewExecutableSchema(generated.Config{Resolvers: &graph.Resolver{}}))
 	if err != nil {
 		fmt.Print(err.Error())
 	}
 	r := gin.Default()
 	auth := r.Group("/auth")
+	r.POST("/query", func(c *gin.Context) {
+		srv.ServeHTTP(c.Writer, c.Request)
+	})
 
+	// Set up GraphQL playground endpoint
+	r.GET("/", func(c *gin.Context) {
+		playground.Handler("GraphQL Playground", "/query").ServeHTTP(c.Writer, c.Request)
+	})
 	{
 		auth.GET("/phone", func(ctx *gin.Context) {
 			phone := ctx.Query("phone")
