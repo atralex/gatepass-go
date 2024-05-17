@@ -17,13 +17,14 @@ GatePass is a phone number-based authentication system developed in Go. It uses 
 ## Technologies Used
 - Go
 - Gin-Gonic
+- GraphQL
 - Twilio API
 - Docker / Docker Compose 🐳
 
 ## Getting Started
 
 ### Prerequisites
-- Go 1.18 or higher
+- Go 1.21
 - Docker (optional)
 
 ### Instalation
@@ -109,6 +110,7 @@ GatePass es un sistema de autenticación basado en números de teléfono desarro
 ## Tecnologías Usadas
 - Go
 - Gin-Gonic
+- GraphQL
 - Twilio API
 - Docker / Docker Compose 🐳
 
