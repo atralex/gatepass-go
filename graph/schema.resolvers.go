@@ -53,7 +53,6 @@ func (r *mutationResolver) VerifyCode(ctx context.Context, input model.Verificat
 	}, nil
 }
 
-// Mutation returns generated.MutationResolver implementation.
 func (r *Resolver) Mutation() generated.MutationResolver { return &mutationResolver{r} }
 
 type mutationResolver struct{ *Resolver }

@@ -31,7 +31,6 @@ func main() {
 		srv.ServeHTTP(c.Writer, c.Request)
 	})
 
-	// Set up GraphQL playground endpoint
 	r.GET("/", func(c *gin.Context) {
 		playground.Handler("GraphQL Playground", "/query").ServeHTTP(c.Writer, c.Request)
 	})
@@ -101,5 +100,5 @@ func main() {
 			}
 		})
 	}
-	r.Run() // listen and serve on
+	r.Run()
 }
